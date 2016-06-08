@@ -1,12 +1,13 @@
-import {Component, Directive} from 'angular2/core';
+import {Component} from 'angular2/core';
+import {PuzzleComponent} from './puzzle.component';
 
 @Component({
     selector: 'my-app',
-    templateUrl: 'templates/html/puzzle-header.html',
-    styleUrls: ['src/css/puzzle-header.css']
+    template: '<puzzle></puzzle>',
+		directives: [PuzzleComponent]
 })
-
 
 export class AppComponent {
 
 }
+

@@ -1,13 +1,28 @@
+
 <section>
 	<h1>Game Setup</h1>
 	<label>What is your name?<input #inputName (keyup)="0" type="text" ></label>
 </section>
-<section>
-	<h1>Solve the Puzzle</h1>
-	<p>Welcome {{inputName.value}}!</p>
-	<label>Switch 1: <input type="text" name="" value=""></label>
-	<label>Switch 2: <input type="text" name="" value=""></label>
-	<label>Switch 3: <input type="text" name="" value=""></label>
-	<label>Switch 4: <input type="text" name="" value=""></label>
+<section
+	[ngClass]="{
+		puzzle: true,
+		solved: 
+		(switch1.value == switchNumber1 && switch1.value != '') && (switch2.value == switchNumber2 && switch2.value != '') && (switch3.value == switchNumber3 && switch3.value != '') && (switch4.value == switchNumber4 && switch4.value != '')
+	}"
+	[ngStyle]="{display: inputName.value === '' ? 'none' : 'block'}"
+	>
+	<h1>Solve the Puzzle <span> {{
+		(switch1.value == switchNumber1 && switch1.value != '') && (switch2.value == switchNumber2 && switch2.value != '') && (switch3.value == switchNumber3 && switch3.value != '') && (switch4.value == switchNumber4 && switch4.value != '') ? ' You Got It!' : 'Keep Guessing'}}</span> </h1>
+	<p>Welcome <span class="name">{{inputName.value}}</span>! </p>
+	<p class="instruction">Guess the correct combination by putting a "1" or "0" in each field</p>
+	<label>Switch 1: <input #switch1 (keyup)="2" maxlength="1" type="text" ></label>
+	<label>Switch 2: <input #switch2 (keyup)="2" maxlength="1" type="text" ></label>
+	<label>Switch 3: <input #switch3 (keyup)="2" maxlength="1" type="text" ></label>
+	<label>Switch 4: <input #switch4 (keyup)="2" maxlength="1" type="text" ></label>
 </section>
-<p>Congratulations {{inputName.value}}, you did it!</p>
+<p [hidden]="
+		(switch1.value != switchNumber1 || switch1.value == '') || (switch2.value != switchNumber2 || switch2.value == '') || (switch3.value != switchNumber3 || switch3.value == '') || (switch4.value != switchNumber4 || switch4.value == '')" > Congratulations {{inputName.value}}, you did it! </p>
+<!-- 		<p>{{(switch1.value != switchNumber1 || switch1.value == '')}} </p>
+		<p>{{(switch2.value != switchNumber2 || switch2.value == '')}} </p>
+		<p>{{(switch3.value != switchNumber3 || switch3.value == '')}} </p>
+		<p>{{(switch4.value != switchNumber4 || switch4.value == '')}} </p> -->
