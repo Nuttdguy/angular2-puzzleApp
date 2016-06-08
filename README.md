@@ -1,3 +1,23 @@
+///////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////
+
+ACCOMPLISHED UNDERSTANDING:
+
+1). Angular2 applications consist of modular components; implement
+2). Export classes to other components; use as directives
+3). Used Angular2 Metadata; binds components
+4). Used Angular2 LifeCycle hooks; enable dynamic form/input validation
+5). Used Angular2 local variables w/interpolation to inject its value accross component of app
+6). Used data-binding, OnInit; enabled listener - hack; ngClass, ngStyle property binding
+7). imported and exported classes and Angular2 core components
+8). Used templateUrl and styleUrls to retrieve files - routing
+9). Used selectors; implement as directive
+
+
+///////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////
+
+
 # Angular 2 Beta Boilerplate
 
 ## 
